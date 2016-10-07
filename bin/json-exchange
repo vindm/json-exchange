@@ -1,10 +1,10 @@
 #!node
 
-const fs = require('fs');
-const path = require('path');
-const commandLineArgs = require('command-line-args');
+var fs = require('fs');
+var path = require('path');
+var commandLineArgs = require('command-line-args');
 
-const transformer = require('../lib/transformer');
+var transformer = require('../lib/transformer');
 
 var options = commandLineArgs([
     {
@@ -72,17 +72,17 @@ fs.readFile(options.from, 'utf-8', function(err, data) {
     var currentChunks;
 
     if (p_parts.length) {
-        const l = p_parts.length;
+        var l = p_parts.length;
 
         p_parts.forEach(function(p, i) {
             currentChunks = [];
             chunks.forEach(function(last) {
-                const elem = transformer.safeGet(last.data, p);
+                var elem = transformer.safeGet(last.data, p);
 
                 console.error(elem);
 
                 if (elem) {
-                    const path = (last.path ? last.path + '.' : '') + p;
+                    var path = (last.path ? last.path + '.' : '') + p;
 
                     if (i < l - 1) {
                         currentChunks = currentChunks.concat(Object.keys(elem).map(function(prop) {
