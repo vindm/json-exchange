@@ -1,0 +1,11 @@
+{
+  "name": "json-exchange",
+  "version": "0.0.1",
+  "bin" : {
+    "json-exchange" : "./bin/json-exchange"
+  },
+  "dependencies": {
+    "command-line-args": "^3.0.1",
+    "lodash.property": "^4.4.2"
+  }
+}
